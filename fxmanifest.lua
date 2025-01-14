@@ -2,7 +2,7 @@ fx_version 'cerulean'
 game 'gta5'
 
 description 'Scoreboard System'
-version '1.0.0'
+version '1.0.1'
 author 'Neon Scripts'
 
 lua54 'yes'  -- Add this line to enable Lua 5.4
