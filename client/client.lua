@@ -23,7 +23,7 @@ RegisterCommand('scoreboard', function()
                     count = 'Medium'
                 elseif count >= Config.PoliceNumbers.low then
                     count = 'Low'
-                else 
+                else
                     count = 'Very Low'
                 end
             else
@@ -37,12 +37,13 @@ RegisterCommand('scoreboard', function()
 
     local options = {}
 
+    -- Main players display option with robbery toggle
     table.insert(options, {
         title = Config.OptionsTitles.totalPlayers.title .. (players[Config.OptionsTitles.totalPlayers.index] or 0) .. ' / ' .. Config.MaxPlayers,
         icon = 'fa-solid fa-users',
         iconColor = '#00FF00',
-        arrow = true,
-        onSelect = function()
+        arrow = Config.EnableRobberyStatus, -- Enable or disable arrow based on config
+        onSelect = Config.EnableRobberyStatus and function()
             local robberyOptions = {}
 
             for _, robbery in ipairs(robberies) do
@@ -52,21 +53,14 @@ RegisterCommand('scoreboard', function()
                 })
             end
 
-            table.insert(robberyOptions, {
-                title = 'Back',
-                icon = 'fa-solid fa-arrow-left',
-                onSelect = function()
-                    lib.showContext('scoreboard')
-                end
-            })
-
             lib.registerContext({
                 id = 'robberies',
                 title = 'Robberies',
+                menu = 'scoreboard',
                 options = robberyOptions
             })
             lib.showContext('robberies')
-        end,
+        end or nil, -- Set to nil if robbery status is disabled
         index = Config.OptionsTitles.totalPlayers.index
     })
 

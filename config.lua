@@ -1,5 +1,8 @@
 Config = {}
 
+Config.AmazingScripts = true
+Config.VersionChecker = true 
+
 Config.Framework = 'QB' -- Set this to 'QB', 'ESX' or 'QBX' depending on your framework.
 
 -- Enable or disable police level text
@@ -29,6 +32,8 @@ Config.PoliceNumbers = {
     medium = 2,
     low = 1
 }
+
+Config.EnableRobberyStatus = true -- Options: true/false | This Will Enable/Disable The Robbery Status Menu
 
 -- Robberies configuration
 Config.Robberies = {
