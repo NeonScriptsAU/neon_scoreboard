@@ -37,12 +37,11 @@ RegisterCommand('scoreboard', function()
 
     local options = {}
 
-    -- Main players display option with robbery toggle
     table.insert(options, {
         title = Config.OptionsTitles.totalPlayers.title .. (players[Config.OptionsTitles.totalPlayers.index] or 0) .. ' / ' .. Config.MaxPlayers,
         icon = 'fa-solid fa-users',
         iconColor = '#00FF00',
-        arrow = Config.EnableRobberyStatus, -- Enable or disable arrow based on config
+        arrow = Config.EnableRobberyStatus,
         onSelect = Config.EnableRobberyStatus and function()
             local robberyOptions = {}
 
@@ -60,7 +59,7 @@ RegisterCommand('scoreboard', function()
                 options = robberyOptions
             })
             lib.showContext('robberies')
-        end or nil, -- Set to nil if robbery status is disabled
+        end or nil,
         index = Config.OptionsTitles.totalPlayers.index
     })
 

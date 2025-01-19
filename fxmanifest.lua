@@ -2,7 +2,7 @@ fx_version 'cerulean'
 game 'gta5'
 
 description 'Scoreboard System'
-version '1.0.2'
+version '1.0.3'
 author 'Neon Scripts'
 
 lua54 'yes'

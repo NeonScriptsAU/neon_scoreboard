@@ -18,10 +18,10 @@ Config.MenuTitle = 'Neon Scripts'
 Config.OptionsTitles = {
     totalPlayers = { title = 'Players: ', index = 1 },
     jobs = {
-        police = { title = '👮 Police', jobName = 'police', index = 3 },
-        ambulance = { title = '🚑 Ambulance', jobName = 'ambulance', index = 4 },
-        fire = { title = '🔥 Fire & Rescue', jobName = 'fire', index = 6 },
-        mechanic = { title = '🛠️ Mechanics', jobName = 'mechanic', index = 7 },
+        police = { title = '👮 Police', jobNames = {'police', 'sheriff'}, index = 2 },
+        ambulance = { title = '🚑 Ambulance', jobNames = {'ambulance'}, index = 3 },
+        fire = { title = '🔥 Fire & Rescue', jobNames = {'fire'}, index = 4 },
+        mechanic = { title = '🛠️ Mechanics', jobNames = {'mechanic'}, index = 5 },
     }
 }
 

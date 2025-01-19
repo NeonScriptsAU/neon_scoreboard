@@ -55,8 +55,11 @@ lib.callback.register('neon_scoreboard:scoreboard', function(source)
 
             if jobName then
                 for job, jobData in pairs(Config.OptionsTitles.jobs) do
-                    if string.lower(jobName) == string.lower(jobData.jobName) then
-                        jobCounts[job] = jobCounts[job] + 1
+                    for _, allowedJob in ipairs(jobData.jobNames) do
+                        if string.lower(jobName) == string.lower(allowedJob) then
+                            jobCounts[job] = jobCounts[job] + 1
+                            break
+                        end
                     end
                 end
             end
